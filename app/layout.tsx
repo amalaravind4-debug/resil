@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Resilience Reading Room",
   },
   description:
-    "India's first AI-integrated study space in Kuravankonam, Kowdiar, Thiruvananthapuram (PIN: 695003). 129 ergonomic cabins, real-time BookMyCabin seat map, 13 hours daily AC (8:30 AM to 9:30 PM), and optical fiber Wi-Fi from ₹800/month.",
+    "24/7 quiet study space in Kuravankonam, Kowdiar, Thiruvananthapuram (PIN: 695003). 129 private cabins, live BookMyCabin seat map, 13 hours daily AC (8:30 AM to 9:30 PM), and optical fiber Wi-Fi from ₹800/month.",
   keywords: [
     "Resilience Reading Room",
     "Resilience Reading Room Kuravankonam",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     url: siteConfig.urls.siteUrl,
     title: "Resilience Reading Room | Focus. Discipline. Success.",
     description:
-      "India's first AI-integrated 24/7 air-conditioned study space in Kuravankonam, Kowdiar, Thiruvananthapuram. 129 ergonomic cabins with live seat availability on BookMyCabin.",
+      "24/7 quiet study space in Kuravankonam, Kowdiar, Thiruvananthapuram. 129 dedicated cabins with live seat availability on BookMyCabin.",
     siteName: "Resilience Reading Room",
     images: [
       {
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Resilience Reading Room | 24/7 Study Space in Kuravankonam, Trivandrum",
     description:
-      "129 precision-engineered study cabins, true 24/7 AC, low-latency fiber Wi-Fi, and live seat reservation via BookMyCabin from ₹800/month.",
+      "129 dedicated study cabins, 13-hour continuous AC (8:30 AM – 9:30 PM), low-latency fiber Wi-Fi, and live seat reservation via BookMyCabin from ₹800/month.",
     images: ["/resil-animation/ezgif-frame-001.jpg"],
   },
   icons: {

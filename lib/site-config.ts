@@ -62,7 +62,7 @@ export const siteConfig = {
     legalName: "Resilience Reading Room",
     tagline: "FOCUS. DISCIPLINE. SUCCESS.",
     subtagline:
-      "India's first AI-integrated 24/7 air-conditioned study space and reading library in Kuravankonam, Kowdiar, Thiruvananthapuram.",
+      "24/7 quiet study space and reading library in Kuravankonam, Kowdiar, Thiruvananthapuram with 13-hour daily continuous AC (8:30 AM – 9:30 PM).",
     established: "2024",
     colors: {
       navy: "#0B1E3D",
