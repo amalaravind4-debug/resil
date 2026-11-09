@@ -90,35 +90,34 @@ export default function TheSpaceGallery() {
       : REAL_INTERIOR_PHOTOS.filter((item) => item.category === activeCategory);
 
   return (
-    <section id="gallery" className="relative bg-[#050505] py-24 sm:py-32 border-t border-white/10">
+    <section id="gallery" className="relative bg-[#050505] py-20 sm:py-28 border-t border-white/[0.08]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/90">
-              <Camera className="h-3.5 w-3.5 text-emerald-400" />
-              Verified On-Premise Photography · Kuravankonam
-            </div>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white/90 sm:text-4xl md:text-5xl">
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">
+              On-Premise Architectural Record
+            </span>
+            <h2 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white/95">
               Inside Resilience Reading Room
             </h2>
-            <p className="mt-3 text-sm text-white/60 max-w-2xl sm:text-base leading-relaxed">
-              Step into the actual study environment at Market Road, Kuravankonam. 129 air-conditioned cabins,
-              individual lockable lockers, 4000K task lighting, RO water, and high-speed print amenities.
+            <p className="mt-2.5 text-xs sm:text-sm text-white/60 max-w-2xl leading-relaxed">
+              Photographed on-site at Market Road, Kuravankonam. 129 air-conditioned cabins,
+              individual lockable overhead storage, 4000K warm LED lighting, RO water station, and Konica Minolta printing hub.
             </p>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2">
+          {/* Understated Segmented Tabs */}
+          <div className="flex items-center gap-1 border border-white/[0.08] bg-[#0c0d10] p-1 rounded-lg shrink-0">
             {categories.map((cat) => (
               <button
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-full px-4 py-1.5 text-xs font-medium transition-all ${
+                className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${
                   activeCategory === cat
-                    ? "bg-white text-black font-semibold shadow-md"
-                    : "border border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
+                    ? "bg-white/[0.12] text-white"
+                    : "text-white/50 hover:text-white/80"
                 }`}
               >
                 {cat}
@@ -132,42 +131,42 @@ export default function TheSpaceGallery() {
           {filteredItems.map((item, idx) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              transition={{ duration: 0.35, delay: idx * 0.05 }}
               onClick={() => setSelectedImage(item)}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors hover:border-white/30 hover:bg-white/[0.05] cursor-pointer"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/[0.08] bg-[#0c0d10] transition-colors hover:border-white/20 cursor-pointer"
             >
-              {/* Image Frame */}
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-black/40">
+              {/* Clean Image Frame with No Slop Badges */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-black/40">
                 <Image
                   src={item.src}
                   alt={item.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover object-center transition-opacity duration-300 group-hover:opacity-95"
+                  className="object-cover object-center transition-opacity duration-300 group-hover:opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-
-                {/* Badge Top Left */}
-                <div className="absolute top-3 left-3 rounded-full border border-white/15 bg-black/60 px-3 py-1 text-[11px] font-medium text-white/90 backdrop-blur-md">
-                  {item.badge}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
                 {/* Enlarge Icon Hover */}
-                <div className="absolute top-3 right-3 rounded-full bg-white/10 p-2 text-white/80 opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-md">
-                  <Maximize2 className="h-4 w-4" />
+                <div className="absolute top-3 right-3 rounded-md bg-black/60 border border-white/[0.1] p-1.5 text-white/80 opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-sm">
+                  <Maximize2 className="h-3.5 w-3.5" />
                 </div>
               </div>
 
               {/* Caption & Specs */}
               <div className="p-5 flex flex-col justify-between flex-1">
                 <div>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400">
-                    {item.category}
-                  </span>
-                  <h3 className="mt-1 text-base font-semibold text-white/95 group-hover:text-emerald-300 transition-colors">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400">
+                      {item.category}
+                    </span>
+                    <span className="text-[11px] font-mono text-white/40">
+                      {item.specs[0]}
+                    </span>
+                  </div>
+                  <h3 className="mt-1 text-sm sm:text-base font-semibold text-white/90 group-hover:text-white transition-colors">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-white/60 line-clamp-2">
@@ -175,17 +174,12 @@ export default function TheSpaceGallery() {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/10 flex flex-wrap gap-1.5">
-                  {item.specs.slice(0, 2).map((sp) => (
-                    <span
-                      key={sp}
-                      className="rounded-md border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] text-white/70"
-                    >
-                      {sp}
-                    </span>
-                  ))}
-                  <span className="ml-auto text-[11px] text-white/40 flex items-center gap-1 group-hover:text-white/80 transition-colors">
-                    <Eye className="h-3 w-3" /> Inspect
+                <div className="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-[11px] text-white/50">
+                  <span className="font-mono">
+                    {item.specs.slice(1, 3).join(" · ")}
+                  </span>
+                  <span className="text-white/40 group-hover:text-white/80 transition-colors flex items-center gap-1 font-mono">
+                    Inspect ↗
                   </span>
                 </div>
               </div>
@@ -205,35 +199,35 @@ export default function TheSpaceGallery() {
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
+              initial={{ scale: 0.97, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
+              exit={{ scale: 0.97, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="relative max-w-4xl w-full overflow-hidden rounded-3xl border border-white/20 bg-[#0c0c0c] shadow-2xl"
+              className="relative max-w-4xl w-full overflow-hidden rounded-xl border border-white/[0.12] bg-[#0c0d10] shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Header */}
-              <div className="flex items-center justify-between border-b border-white/10 p-5 sm:p-6">
+              <div className="flex items-center justify-between border-b border-white/[0.08] p-5 sm:p-6">
                 <div>
                   <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">
-                    {selectedImage.category} · {selectedImage.badge}
+                    {selectedImage.category} · Spec Sheet
                   </span>
-                  <h3 className="mt-1 text-lg sm:text-2xl font-semibold text-white/95">
+                  <h3 className="mt-1 text-base sm:text-xl font-semibold text-white/95">
                     {selectedImage.title}
                   </h3>
                 </div>
                 <button
                   type="button"
                   onClick={() => setSelectedImage(null)}
-                  className="rounded-full border border-white/15 bg-white/10 p-2 text-white/90 hover:bg-white/20 transition-colors"
+                  className="rounded-lg border border-white/[0.1] bg-white/[0.05] p-2 text-white/80 hover:bg-white/[0.1] transition-colors"
                   aria-label="Close photo preview"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-4 w-4" />
                 </button>
               </div>
 
               {/* Modal Image View */}
-              <div className="relative h-[55vh] sm:h-[65vh] w-full bg-black/60 flex items-center justify-center p-2">
+              <div className="relative h-[50vh] sm:h-[60vh] w-full bg-black/80 flex items-center justify-center p-2">
                 <Image
                   src={selectedImage.src}
                   alt={selectedImage.title}
@@ -243,17 +237,17 @@ export default function TheSpaceGallery() {
               </div>
 
               {/* Modal Footer */}
-              <div className="border-t border-white/10 bg-[#080808] p-5 sm:p-6">
-                <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+              <div className="border-t border-white/[0.08] bg-[#08080a] p-5 sm:p-6">
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
                   {selectedImage.description}
                 </p>
-                <div className="mt-4 flex flex-wrap items-center gap-2">
+                <div className="mt-3 pt-3 border-t border-white/[0.06] flex flex-wrap items-center gap-2 text-xs font-mono text-white/50">
                   {selectedImage.specs.map((sp) => (
                     <span
                       key={sp}
-                      className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80"
+                      className="rounded border border-white/[0.08] bg-white/[0.03] px-2.5 py-1 text-[11px] text-white/70"
                     >
-                      ✓ {sp}
+                      {sp}
                     </span>
                   ))}
                 </div>

@@ -296,127 +296,104 @@ export default function CabinScrollCanvas() {
         {/* Seamless bottom fade into #050505 page section */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#050505]" />
 
-        {/* 0% SCROLL: HERO HEADLINE (Centered) */}
+        {/* 0% SCROLL: HERO HEADLINE (Clean, Human-Designed Architectural Canvas) */}
         <motion.div
           style={{ opacity: s0Opacity, y: s0Y, display: s0Display }}
-          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-between px-4 pt-16 pb-6 sm:py-20 text-center"
+          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-between px-4 pt-28 pb-8 sm:pt-36 sm:pb-12 text-center"
         >
-          <div className="mt-4 sm:mt-8 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-[#161513]/80 px-3.5 py-1.5 backdrop-blur-md">
-            <div className="relative h-4 w-4 shrink-0">
-              <NextImage
-                src="/images/resilience-logo.png"
-                alt="Resilience Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
-            <span className="text-[11px] sm:text-xs font-medium tracking-tight text-white/90">
-              129-Seat Dedicated Study Sanctuary · Kuravankonam, Kowdiar
-            </span>
-          </div>
+          {/* Subtle Monospace Spec Kicker */}
+          <p className="text-[11px] font-mono tracking-widest uppercase text-white/50">
+            Market Road, Kuravankonam · Kowdiar P.O. 695003
+          </p>
 
-          <div className="max-w-3xl rounded-2xl sm:rounded-3xl bg-[#161513]/80 p-5 sm:p-8 backdrop-blur-md border border-white/10 shadow-2xl mx-2">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white/95 leading-tight">
-              Built for Unbroken Focus.
+          {/* Headline & Description: Floating gracefully on canvas with zero clunky glass boxes */}
+          <div className="max-w-2xl mx-auto px-4">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-medium tracking-tight text-white/95 leading-tight">
+              Built for unbroken focus
             </h1>
-            <p className="mx-auto mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-white/70 leading-relaxed">
-              129 private study cabins in Kowdiar, Thiruvananthapuram.
-              Acoustic privacy wings, 13-hour air conditioning, and BookMyCabin digital booking.
+            <p className="mx-auto mt-3 sm:mt-4 max-w-lg text-xs sm:text-sm text-white/60 leading-relaxed font-normal">
+              129 private study cabins engineered with acoustic isolation wings, continuous 13-hour air conditioning, and BookMyCabin digital booking.
             </p>
           </div>
 
+          {/* Quiet Scroll Prompt */}
           <div className="flex flex-col items-center gap-1.5 pb-2">
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-white/70 font-mono">
-              Scroll to Explore Interior
+            <span className="text-[11px] text-white/40 font-mono tracking-wider">
+              Scroll to explore interior ↓
             </span>
-            <div className="h-6 sm:h-8 w-[1px] bg-gradient-to-b from-white/70 to-transparent" />
+            <div className="h-5 w-[1px] bg-gradient-to-b from-white/30 to-transparent" />
           </div>
         </motion.div>
 
-        {/* 30% SCROLL: FEATURE #1 (Left Aligned) */}
+        {/* 30% SCROLL: FEATURE #1 (Left Aligned Architectural Spec) */}
         <motion.div
           style={{ opacity: s30Opacity, y: s30Y, display: s30Display }}
           className="pointer-events-none absolute inset-0 mx-auto flex max-w-7xl items-center justify-start px-4 sm:px-12"
         >
-          <div className="max-w-md w-full rounded-2xl border border-white/10 bg-[#161513]/90 p-5 sm:p-8 backdrop-blur-xl shadow-2xl">
-            <div className="mb-2 inline-flex items-center gap-2 text-xs font-medium text-emerald-400">
-              <Layers className="h-4 w-4" />
-              <span>01 · Acoustic &amp; Visual Isolation</span>
-            </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/95">
-              Zero Peripheral Distraction
+          <div className="max-w-md w-full rounded-xl border border-white/[0.08] bg-[#0c0d10]/95 p-6 sm:p-7 backdrop-blur-md shadow-xl">
+            <span className="text-[11px] font-mono tracking-wider uppercase text-emerald-400">
+              01 / Acoustic Architecture
+            </span>
+            <h2 className="mt-1.5 text-lg sm:text-2xl font-semibold tracking-tight text-white/95">
+              Zero peripheral distraction
             </h2>
-            <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-white/70">
-              As the cabin expands, notice the high-density matte acoustic partitions
-              and ergonomic desk geometry—crafted for UPSC, NEET, and CA aspirants
-              logging 12-hour sessions.
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed text-white/60">
+              High-density matte timber acoustic partitions shield your direct line of sight. Tested for 12-hour uninterrupted preparation runs for UPSC, NEET, and CA candidates.
             </p>
           </div>
         </motion.div>
 
-        {/* 60% SCROLL: FEATURE #2 (Right Aligned) */}
+        {/* 60% SCROLL: FEATURE #2 (Right Aligned Architectural Spec) */}
         <motion.div
           style={{ opacity: s60Opacity, y: s60Y, display: s60Display }}
           className="pointer-events-none absolute inset-0 mx-auto flex max-w-7xl items-center justify-end px-4 sm:px-12"
         >
-          <div className="max-w-md w-full rounded-2xl border border-white/10 bg-[#161513]/90 p-5 sm:p-8 backdrop-blur-xl shadow-2xl">
-            <div className="mb-2 inline-flex items-center gap-2 text-xs font-medium text-sky-400">
-              <Cpu className="h-4 w-4" />
-              <span>02 · Internal Telemetry &amp; 13-Hour AC</span>
-            </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/95">
-              Concealed Power, Fiber &amp; Zoned AC
+          <div className="max-w-md w-full rounded-xl border border-white/[0.08] bg-[#0c0d10]/95 p-6 sm:p-7 backdrop-blur-md shadow-xl">
+            <span className="text-[11px] font-mono tracking-wider uppercase text-emerald-400">
+              02 / Climate &amp; Power
+            </span>
+            <h2 className="mt-1.5 text-lg sm:text-2xl font-semibold tracking-tight text-white/95">
+              Concealed power &amp; 13-hour AC
             </h2>
-            <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-white/70">
-              Every cabin integrates flicker-free 4000K task lighting, individual
-              surge-protected power, high-speed Wi-Fi, and 13 hours daily continuous
-              AC (8:30 AM to 9:30 PM) synced directly to BookMyCabin.
+            <p className="mt-2 text-xs sm:text-sm leading-relaxed text-white/60">
+              Continuous air conditioning from 8:30 AM to 9:30 PM daily, low-latency dual-band optical fiber, flicker-free 4000K warm LED lighting, and individual surge sockets.
             </p>
           </div>
         </motion.div>
 
-        {/* 90% SCROLL: CTA / FINAL MESSAGE (Centered) */}
+        {/* 90% SCROLL: CTA / FINAL MESSAGE (Centered Reservation Docket) */}
         <motion.div
           style={{ opacity: s90Opacity, y: s90Y, display: s90Display }}
           className="pointer-events-none absolute inset-0 flex flex-col items-center justify-end px-4 pb-12 sm:pb-16 text-center"
         >
-          <div className="pointer-events-auto max-w-2xl w-full rounded-2xl sm:rounded-3xl border border-white/10 bg-[#161513]/90 p-6 sm:p-10 backdrop-blur-xl shadow-2xl mx-2">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/90">
-              <div className="relative h-3.5 w-3.5 shrink-0">
-                <NextImage
-                  src="/images/resilience-logo.png"
-                  alt="Resilience Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span>Open 24/7 · TC 24/1816-4, Market Road, Kuravankonam</span>
-            </div>
-            <h2 className="mt-3.5 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-white/95">
-              Reserve Your Cabin on BookMyCabin
+          <div className="pointer-events-auto max-w-xl w-full rounded-2xl border border-white/[0.08] bg-[#0c0d10]/95 p-6 sm:p-8 backdrop-blur-md shadow-2xl mx-2">
+            <span className="text-[11px] font-mono tracking-wider uppercase text-emerald-400">
+              Reservation Docket · 129 Cabins
+            </span>
+            <h2 className="mt-1.5 text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight text-white/95">
+              Reserve your cabin on BookMyCabin
             </h2>
-            <p className="mt-2.5 text-xs sm:text-sm text-white/70 max-w-lg mx-auto">
-              View the live 129-seat orientation map, select your AC zone, and lock your
-              reservation starting at ₹800/month.
+            <p className="mt-2 text-xs sm:text-sm text-white/60 max-w-md mx-auto leading-relaxed">
+              Inspect the live 129-seat availability map, select your AC zone, and lock your reservation starting at ₹800/month.
             </p>
-            <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-5 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <a
                 href={BOOKMYCABIN_ROOM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-xs sm:text-sm font-semibold text-black transition-colors hover:bg-neutral-200 sm:w-auto shadow-md"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-lg bg-white px-5 py-2.5 text-xs font-semibold text-black transition-colors hover:bg-neutral-200 shadow-sm"
               >
                 <span>Book Seat on BookMyCabin</span>
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
               <a
                 href="https://wa.me/918281208267?text=Hi%20Resilience%20Reading%20Room%2C%20I%20would%20like%20to%20inquire%20about%20cabin%20availability%20and%20plans"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-3 text-xs sm:text-sm font-medium text-emerald-300 transition-colors hover:bg-emerald-500/20 sm:w-auto"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-lg border border-white/[0.12] bg-white/[0.04] px-4 py-2.5 text-xs font-medium text-white/80 transition-colors hover:bg-white/[0.08]"
               >
-                <MessageCircle className="h-4 w-4 text-emerald-400" />
-                <span>WhatsApp {DISPLAY_PHONE}</span>
+                <MessageCircle className="h-3.5 w-3.5 text-emerald-400" />
+                <span>WhatsApp Desk: {DISPLAY_PHONE}</span>
               </a>
             </div>
           </div>
